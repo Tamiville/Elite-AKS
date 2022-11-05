@@ -18,7 +18,7 @@ provider "azurerm" {
   features {}
 }
 
-# provider "kubernetes" {
-#   alias       = "kubernetes"
-#   config_path = "./azurecredentials"
-# }
+provider "kubernetes" {
+  alias       = "kubernetes"
+  config_path = "./azurecredentials"
+}

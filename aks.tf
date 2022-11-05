@@ -58,7 +58,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = local.azurekubernetesrg
   dns_prefix          = var.dns_prefix
 
-# depends_on = [azurerm_resource_group.eliteclusterdemorg]
+  # depends_on = [azurerm_resource_group.eliteclusterdemorg]
 
   linux_profile {
     admin_username = "ubuntu"
@@ -98,16 +98,16 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 #  * NAMESPACE *
 #  *************/
 # # Create Namespace
-# resource "kubernetes_namespace" "eliteclusterdemo" {
-#   metadata {
-#     annotations = {
-#       name = "eliteclusterdemo"
-#     }
+resource "kubernetes_namespace" "eliteclusterdemo" {
+  metadata {
+    annotations = {
+      name = "eliteclusterdemo"
+    }
 
-#     labels = {
-#       mylabel = "eliteclusterdemo"
-#     }
+    labels = {
+      mylabel = "eliteclusterdemo"
+    }
 
-#     name = "eliteclusterdemo"
-#   }
-# }
+    name = "eliteclusterdemo"
+  }
+}
